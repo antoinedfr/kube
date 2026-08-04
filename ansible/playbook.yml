@@ -1,0 +1,15 @@
+---
+- name: Create a directory
+  hosts: localhost
+  tasks:
+    - name: create a directory
+      ansible.builtin.file:
+        state: directory
+        mode: "0755"
+        group: staff
+        owner: boris
+        path: "{{ playbook_dir }}/{{ item }}"
+      loop:
+        - "test"
+        - "demo"
+...
