@@ -1,5 +1,5 @@
 resource "aws_lb" "alb" {
-  name               = "antoine-alb-web-bc"
+  name               = "antoine-d-alb-web-bc"
   internal           = false
   load_balancer_type = "application"
 
@@ -10,13 +10,14 @@ resource "aws_lb" "alb" {
   subnets = data.aws_subnets.default.ids
 
   tags = {
-    Name = "antoine-alb-web-bc"
-    TP   = "TP2"
+    Name  = "antoine-d-alb-web-bc"
+    Owner = "antoine-d"
+    TP    = "TP2"
   }
 }
 
 resource "aws_lb_target_group" "tg" {
-  name        = "antoine-tg-web-bc"
+  name        = "antoine-d-tg-web-bc"
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"
@@ -29,8 +30,9 @@ resource "aws_lb_target_group" "tg" {
   }
 
   tags = {
-    Name = "antoine-tg-web-bc"
-    TP   = "TP2"
+    Name  = "antoine-d-tg-web-bc"
+    Owner = "antoine-d"
+    TP    = "TP2"
   }
 }
 

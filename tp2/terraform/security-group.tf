@@ -1,5 +1,5 @@
 resource "aws_security_group" "alb" {
-  name        = "antoine-alb-sg"
+  name        = "antoine-d-alb-sg"
   description = "Security Group pour l'Application Load Balancer"
   vpc_id      = data.aws_vpc.default.id
 
@@ -20,7 +20,8 @@ resource "aws_security_group" "alb" {
   }
 
   tags = {
-    Name = "antoine-alb-sg"
-    TP   = "TP2"
+    Name  = "antoine-d-alb-sg"
+    Owner = "antoine-d"
+    TP    = "TP2"
   }
 }
